@@ -1,7 +1,7 @@
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+*~
+*.diff
+*.patch
 
 # Package Files #
 *.jar
@@ -10,3 +10,30 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Folders #
+build/
+bin/
+private/
+build-archive/
+
+# Project artifacts
+.classpath
+.project
+.settings
+.gradle
+gradle.properties
+
+# ignore dbcp.properties and web.xml as they are always soft links
+dbcp.properties
+dbcp-debug.properties
+web.xml
+web-debug.xml
+log4j.properties
+
+# the third-party front-end components
+src/main/webapp/third_party
+
+# npm stuff
+node_modules
+
