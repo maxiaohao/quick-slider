@@ -1,0 +1,14 @@
+{
+  "name": "quick-slider",
+  "version": "0.1.0",
+  "authors": [
+    "maxiaohao <maxiaohao@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1",
+    "flexslider": "latest",
+    "anythingslider": "1.9.4",
+    "slidertabs": "lopatin/sliderTabs#latest",
+    "jssor": "jssor/slider#latest"
+  }
+}
