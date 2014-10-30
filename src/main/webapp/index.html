@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>quick-slider</title>
+
+<link rel="stylesheet" href="css/main.css" type="text/css">
+<link rel="stylesheet" href="css/jssor-slider-navigator.css" type="text/css">
+
+<script src="third_party/jquery/dist/jquery.min.js"></script>
+<script src="third_party/jssor/js/jssor.slider.mini.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(
+            function() {
+
+                $.ajax({
+                    url : "./get_container",
+                    data : {
+                        id : 1
+                    },
+                    success : function(data) {
+                        console.log(data);
+
+                        if (data) {
+
+                            var styles = data.styles;
+                            if (styles) {
+
+                                for ( var attr in styles) {
+                                    if (styles.hasOwnProperty(attr)) {
+                                        $("#container").css(attr, styles[attr]);
+                                        $("#slides").css(attr, styles[attr]);
+                                    }
+
+                                }
+
+                            }
+
+                            var slides = data.slides;
+                            if (slides) {
+
+                                for ( var i = 0, len = slides.length; i < len; i++) {
+                                    var slide = slides[i];
+
+                                    if (slide) {
+                                        // append new slide
+                                        var newSlideDiv = $("<div></div>");
+                                        $("#slides").append(newSlideDiv);
+
+                                        var slideStyles = slide.styles;
+
+                                        if (slideStyles) {
+                                            for ( var slideStyleAttr in slideStyles) {
+                                                if (slideStyles.hasOwnProperty(slideStyleAttr)) {
+                                                    newSlideDiv.css(slideStyleAttr,
+                                                            slideStyles[slideStyleAttr]);
+                                                }
+
+                                            }
+                                        }
+
+                                        // items in the slide
+                                        var items = slide.items;
+
+                                        if (items) {
+
+                                            for ( var j = 0, itemsLen = items.length; j < itemsLen; j++) {
+                                                var item = items[j];
+                                                if (item) {
+                                                    // append new item as div
+                                                    var newItemDiv = $("<div></div>");
+                                                    if (item.html) {
+                                                        newItemDiv.append(item.html);
+                                                    }
+                                                    newSlideDiv.append(newItemDiv);
+
+                                                    var itemStyles = item.styles;
+
+                                                    if (itemStyles) {
+                                                        for ( var itemStyleAttr in itemStyles) {
+                                                            if (itemStyles.hasOwnProperty(itemStyleAttr)) {
+                                                                newItemDiv.css(itemStyleAttr,
+                                                                        itemStyles[itemStyleAttr]);
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            var options = {
+                                $AutoPlay : true,
+                                $AutoPlayInterval : 5000,
+                                $ArrowNavigatorOptions : {
+                                    $Class : $JssorArrowNavigator$,
+                                    $ChanceToShow : 1,
+                                    $AutoCenter : 2
+                                },
+                                $BulletNavigatorOptions : {
+                                    $Class : $JssorBulletNavigator$,
+                                    $ChanceToShow : 2,
+                                    $AutoCenter : 1,
+                                    $SpacingX : 12
+                                }
+                            };
+                            var jssor_slider1 = new $JssorSlider$('container', options);
+                        }
+                    }
+                });
+
+            });
+</script>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div id="slides" u="slides" style="cursor: move; position: relative;">
+            
+            <!-- 
+            <div class="div1">
+                <div style="position: absolute; left: 80px; top: 55px;">
+                    <a href="">tttt</a>
+                </div>
+            </div>
+            
+             
+            <div class="div2"></div>
+            <div class="div3"></div>
+            -->
+        </div>
+
+        <span u="arrowleft" class="jssora10l" style="width: 28px; height: 40px; top: 123px; left: 8px;"></span> <span
+            u="arrowright" class="jssora10r" style="width: 28px; height: 40px; top: 123px; right: 8px"></span>
+        <div u="navigator" class="jssorb01" style="position: absolute; bottom: 16px; right: 10px;">
+            <div u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px;"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

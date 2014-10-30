@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+#slider {
+    background: #cef;
+}
+
+.div1 {
+    left: 10px;
+    top: 240px;
+    background: #cef;
+    border: 0px solid blue; //
+    width: 300px;
+    height: 100px;
+}
+
+.div2 {
+    left: 10px;
+    top: 240px;
+    background: #58A1D9;
+    border: 0px solid red;
+
+}
+
+.div3 {
+    left: 10px;
+    top: 240px;
+    background: #89D955;
+    border: 0px solid black; //
+    width: 300px;
+    height: 100px;
+}
+
+.div5 {
+    position: absolute;
+    left: 3px;
+    top: 3px; //
+    background: orange; //
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.div4 {
+    position: absolute;
+    left: 380px;
+    top: 30px;
+    background: yellow;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+}
