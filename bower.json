@@ -5,10 +5,7 @@
     "maxiaohao <maxiaohao@gmail.com>"
   ],
   "dependencies": {
-    "jquery": "1.11.1",
-    "flexslider": "latest",
-    "anythingslider": "1.9.4",
-    "slidertabs": "lopatin/sliderTabs#latest",
+    "jquery": "latest",
     "jssor": "jssor/slider#latest"
   }
 }
