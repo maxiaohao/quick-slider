@@ -111,7 +111,7 @@ public class Slide implements Comparable<Slide> {
     @Override
     public int compareTo(Slide o) {
         if (null != o) {
-            return this.displayOrder < o.displayOrder ? 1 : -1;
+            return this.displayOrder > o.displayOrder ? 1 : -1;
         } else {
             return 0;
         }
