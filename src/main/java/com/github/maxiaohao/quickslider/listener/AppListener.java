@@ -35,7 +35,7 @@ public class AppListener implements ServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         // TODO Auto-generated method stub
-        PersistenceHandler.getInstance().saveAll();
+        // PersistenceHandler.getInstance().saveAll();
     }
 
 }

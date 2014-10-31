@@ -128,6 +128,7 @@ public class PersistenceHandler {
 
 
     public Container getContainer(int containerId) {
+        loadAll();
         return containers.get(containerId);
     }
 }
