@@ -5,7 +5,7 @@
     "maxiaohao <maxiaohao@gmail.com>"
   ],
   "dependencies": {
-    "jquery": "latest",
+    "jquery": "1.11.1",
     "jssor": "jssor/slider#latest"
   }
 }
