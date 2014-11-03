@@ -4,7 +4,7 @@
     position: absolute;
     cursor: pointer;
     display: block;
-    background: url(../image/jssor-slider-arrow-10.png) no-repeat;
+    background: url(../third_party/jssor/img/a10.png) no-repeat;
     overflow: hidden;
 }
 
