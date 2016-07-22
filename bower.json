@@ -6,6 +6,6 @@
   ],
   "dependencies": {
     "jquery": "1.11.1",
-    "jssor": "jssor/slider#latest"
+    "jssor": "jssor/slider#18.0"
   }
 }
