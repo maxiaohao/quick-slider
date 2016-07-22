@@ -75,6 +75,18 @@
                                                     }
                                                     newSlideDiv.append(newItemDiv);
 
+                                                    var itemAttributes = item.attributes;
+
+                                                    if (itemAttributes) {
+                                                        for ( var itemAttrName in itemAttributes) {
+                                                            if (itemAttributes.hasOwnProperty(itemAttrName)) {
+                                                                newItemDiv.attr(itemAttrName,
+                                                                        itemAttributes[itemAttrName]);
+                                                            }
+
+                                                        }
+                                                    }
+
                                                     var itemStyles = item.styles;
 
                                                     if (itemStyles) {

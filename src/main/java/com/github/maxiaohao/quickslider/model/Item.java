@@ -15,6 +15,11 @@ public class Item {
     String html;
 
     /**
+     * Attributes of the &lt;div&gt; for the item itself.
+     */
+    Map<String, String> attributes = new TreeMap<String, String>();
+
+    /**
      * Styles of the &lt;div&gt; for the item itself.
      */
     Map<String, String> styles = new TreeMap<String, String>();
@@ -57,6 +62,30 @@ public class Item {
 
     public void setHtml(String html) {
         this.html = html;
+    }
+
+
+    public void addAttribute(String name, String value) {
+        if (null != name && name.length() > 0 && null != value && value.length() > 0) {
+            attributes.put(name, value);
+        }
+    }
+
+
+    public void removeAttribute(String name) {
+        if (null != name) {
+            attributes.remove(name);
+        }
+    }
+
+
+    public void clearAttributes() {
+        attributes.clear();
+    }
+
+
+    public Map<String, String> getAttributes() {
+        return attributes;
     }
 
 
