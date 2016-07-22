@@ -11,13 +11,24 @@
 <script src="third_party/jssor/js/jssor.slider.mini.js"></script>
 
 <script type="text/javascript" charset="utf-8">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        } else {
+            // by default we read slider 1
+            return 1;
+        }
+    }
+
     $(document).ready(
             function() {
 
                 $.ajax({
                     url : "./get_container",
                     data : {
-                        id : 1
+                        id : getQueryString("container_id")
                     },
                     success : function(data) {
                         console.log(data);
