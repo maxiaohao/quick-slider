@@ -12,7 +12,7 @@ war.archiveName = 'quick-slider.war'
 
 allprojects {
 
-    tasks.withType(Compile) {
+    tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
     }
 
